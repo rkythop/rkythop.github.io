@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloventis - Digital Transformation & SAP Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a3a5f;
+            --secondary: #2c5aa0;
+            --accent: #4a90e2;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #28a745;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 160px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        .btn:hover {
+            background-color: #3a7fd8;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            background-color: var(--light);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .value-card i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .value-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        /* Solutions Section */
+        .solutions-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .tab-btn {
+            padding: 12px 25px;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .tab-btn.active {
+            color: var(--primary);
+        }
+        
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: var(--accent);
+            bottom: -1px;
+            left: 0;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .solution-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .solution-img {
+            height: 200px;
+            background-color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 3rem;
+        }
+        
+        .solution-content {
+            padding: 25px;
+        }
+        
+        .solution-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .solution-content ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .solution-content li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .solution-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        /* Training Section */
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .training-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .training-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .training-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .training-header h3 {
+            font-size: 1.5rem;
+        }
+        
+        .training-body {
+            padding: 25px;
+        }
+        
+        .training-body ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .training-body li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .training-body li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .quote {
+            font-style: italic;
+            text-align: center;
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 20px;
+            border-left: 3px solid var(--accent);
+            background-color: var(--light);
+            font-size: 1.1rem;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--light);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .contact-info p {
+            margin-bottom: 30px;
+        }
+        
+        .contact-details {
+            margin-top: 30px;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-detail i {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-right: 15px;
+            width: 20px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .solutions-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-btn {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+        }
+        /* Embedded contact form styling */
+        .content-form {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 0;
+        }
+
+        .content-form .content-note p {
+            max-width: 720px;
+            color: #4a4a4a;
+            text-align: center;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .iframe-wrap {
+            width: 100%;
+            max-width: 720px;
+            height: 560px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(21,32,43,0.08);
+            border: 1px solid rgba(10,36,78,0.06);
+            background: white;
+        }
+
+        .iframe-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+        .form-message {
+            display: none;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <svg width="100%" height="100%" viewBox="0 0 450 100" xmlns="http://www.w3.org/2000/svg"><defs><style>.brand{font-family:Arial,Helvetica,sans-serif;font-size:72px;font-weight:700;fill:#036}</style></defs><text x="10" y="75" class="brand">CL</text><g transform="matrix(.23 0 0 .23 103 16)"><path fill="none" stroke="#036" stroke-width="10" d="M150 8.579 291.421 150 150 291.421 8.579 150z"/><path stroke="#036" stroke-width="6" d="M150 40v220M40 150h220M80 80l140 140m0-140L80 220"/><circle cx="150" cy="40" r="10" fill="#036"/><circle cx="150" cy="260" r="10" fill="#036"/><circle cx="40" cy="150" r="10" fill="#036"/><circle cx="260" cy="150" r="10" fill="#036"/><circle cx="150" cy="150" r="14" fill="#00a3e0"/></g><text x="175" y="75" class="brand">VENTIS</text></svg>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#solutions">Solutions</a></li>
+                    <li><a href="#training">Training</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>The Catalyst for Your Digital Transformation</h1>
+            <p>Driving enterprise transformation through SAP excellence, cloud innovation, and next-gen AI. We deliver data-driven solutions with precision, reliability, and impact.</p>
+            <div class="hero-buttons">
+                <a href="#solutions" class="btn">Explore Our Solutions</a>
+                <a href="#contact" class="btn btn-outline">Contact Us Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+                <p>Technology as a Catalyst, Not Just an Enabler</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Transforming Enterprises Through Technology Excellence</h3>
+                    <p>At Cloventis, we believe technology should do more than enable—it should catalyze profound transformation. For over five years, we have been at the forefront of delivering specialized SAP solutions, helping global enterprises streamline operations, unlock new efficiencies, and achieve measurable growth.</p>
+                    <p>Our expertise forms a powerful digital core: deep mastery in SAP, robust capabilities in Microsoft technologies, advanced Data Analytics, and scalable Cloud solutions. This empowers businesses to harness the true value of their digital ecosystems. Now, we are embracing the future by integrating Generative AI, enabling organizations to innovate, adapt, and lead in an era defined by intelligence and speed.</p>
+                    <p>Trusted by industry giants, we combine deep technical mastery with strategic consulting to deliver end-to-end IT services that are reliable, scalable, and future-ready.</p>
+                </div>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-medal"></i>
+                    <h4>Excellence</h4>
+                    <p>Delivering unmatched expertise with SAP at the core of all we do.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Innovation</h4>
+                    <p>Harnessing the power of Cloud, Data, and Generative AI to fuel transformation.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Integrity</h4>
+                    <p>Building lasting partnerships through transparency and accountability.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-users"></i>
+                    <h4>Client Focus</h4>
+                    <p>Tailoring every solution to align precisely with your business goals.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-rocket"></i>
+                    <h4>Futuristic</h4>
+                    <p>Preparing your enterprise for the challenges and opportunities of tomorrow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="solutions-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Solutions</h2>
+                <p>Comprehensive services to drive your business forward</p>
+            </div>
+            
+            <div class="solutions-tabs">
+                <button class="tab-btn active" data-tab="services">IT Services & Consulting</button>
+                <button class="tab-btn" data-tab="recruitment">Recruitment Services</button>
+            </div>
+            
+            <div class="tab-content active" id="services">
+                <div class="solution-card">
+                    <div class="solution-img">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="solution-content">
+                        <h3>IT Services & Consulting</h3>
+                        <p>We deliver comprehensive IT solutions that empower enterprises to innovate, scale, and stay future-ready. Our deep expertise unlocks significant business value through:</p>
+                        <ul>
+                            <li>End-to-End IT Services – From strategic implementation and seamless integration to ongoing support and optimization.</li>
+                            <li>Strategic IT Consulting – Aligning technology with your business objectives to ensure cost efficiency, agility, and scalability.</li>
+                            <li>Digital Transformation – Modernizing your operations by leveraging cutting-edge Cloud, Analytics, and AI technologies.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="recruitment">
+                <div class="solution-card">
+                    <div class="solution-img">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="solution-content">
+                        <h3>Recruitment Services</h3>
+                        <p>Finding the right talent is at the heart of building a strong organization. We provide tailored recruitment solutions to meet your evolving needs.</p>
+                        <ul>
+                            <li>Full-Time Hiring – Identifying and placing the best-fit professionals to strengthen your core workforce.</li>
+                            <li>Contract Hiring – Flexible, project-based hiring to meet immediate and short-term resource demands.</li>
+                            <li>RPO (Recruitment Process Outsourcing) – Comprehensive end-to-end recruitment management to streamline your hiring process, reduce costs, and guarantee top-quality talent.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Section -->
+    <section id="training">
+        <div class="container">
+            <div class="section-title">
+                <h2>Training & Development</h2>
+                <p>Empowering people with knowledge for the right outcomes</p>
+            </div>
+            
+            <div class="training-grid">
+                <div class="training-card">
+                    <div class="training-header">
+                        <h3>Corporate Training</h3>
+                    </div>
+                    <div class="training-body">
+                        <p>We design and deliver customized corporate training programs to keep your workforce aligned with the latest technologies and industry best practices.</p>
+                        <p>Our modules, led by seasoned industry experts, cover:</p>
+                        <ul>
+                            <li>SAP Solutions & Applications</li>
+                            <li>Microsoft Technologies</li>
+                            <li>Cloud & Data Analytics</li>
+                            <li>Generative AI and Emerging Tech</li>
+                            <li>Digital Transformation Best Practices</li>
+                        </ul>
+                        <p>Through hands-on workshops and real-world case studies, we ensure your professionals gain practical skills they can apply effectively.</p>
+                    </div>
+                </div>
+                
+                <div class="training-card">
+                    <div class="training-header">
+                        <h3>Internship & Upskilling</h3>
+                    </div>
+                    <div class="training-body">
+                        <p>We are committed to shaping the next generation of IT talent. Our programs for interns and freshers are designed to:</p>
+                        <ul>
+                            <li>Build a strong foundation in SAP, Microsoft, Cloud, and Data Analytics</li>
+                            <li>Provide mentorship, live project exposure, and continuous guidance</li>
+                            <li>Create job-ready talent equipped to contribute to global enterprises</li>
+                            <li>Introduce interns to the latest IT platforms and tools</li>
+                        </ul>
+                        <p><strong>Why Choose Our Training Programs?</strong></p>
+                        <ul>
+                            <li>Industry-relevant curriculum curated by practitioners</li>
+                            <li>Blended learning approach combining theory with practical exposure</li>
+                            <li>Programs scalable from interns to experienced professionals</li>
+                            <li>Focus on future-proof skills that drive organizational success</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quote">
+                <p>"Empower people with the right knowledge, so organizations can achieve the right outcomes"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Let's create something impactful together</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>At Cloventis, every conversation sparks possibility. Whether you're exploring IT solutions, seeking consulting support, or looking to build a high-performing team, we're here to guide you.</p>
+                    <p>Share your details, and let's connect to turn your challenges into opportunities.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@cloventis.com</span>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>WeWork, K Raheja Mindspace, Survey No. 64,<br>
+                                Building Number 9, 13th Floor, Madhapur,<br>
+                                Hyderabad, Telangana 500081</span>
+                        </div>
+                    </div>
+
+                    <p><em>We usually respond within 24 hours. Because your time matters.</em></p>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formsubmit.co/rrn2022@gmail.com" method="POST">
+                        <div id="formMessage" class="form-message" aria-live="polite"></div>
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email ID *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Interest *</label>
+                            <select id="service" class="form-control" required>
+                                <option value="">Select a service</option>
+                                <option value="IT Services">IT Services</option>
+                                <option value="IT Consulting">IT Consulting</option>
+                                <option value="Recruitment">Recruitment</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message / Requirement</label>
+                            <textarea id="message" class="form-control" rows="5"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>CLOVENTIS</h3>
+                    <p>Driving enterprise transformation through SAP excellence, cloud innovation, and next-gen AI.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#solutions">Solutions</a></li>
+                        <li><a href="#training">Training</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">IT Services</a></li>
+                        <li><a href="#">IT Consulting</a></li>
+                        <li><a href="#">Recruitment</a></li>
+                        <li><a href="#">Corporate Training</a></li>
+                        <li><a href="#">Digital Transformation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> info@cloventis.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> WeWork, K Raheja Mindspace, Survey No. 64, Building Number 9, 13th Floor, Madhapur, Hyderabad, Telangana 500081</li>
+                        <li><i class="fas fa-clock"></i> Response within 24 hours</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Cloventis. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Tab Functionality for Solutions Section
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+        
+        // Native contact form handling (AJAX + inline UI)
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const name = document.getElementById('name').value.trim();
+                const company = document.getElementById('company').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const service = document.getElementById('service').value;
+                const message = document.getElementById('message').value.trim();
+
+                const showMessage = (text, isError = false) => {
+                    if (!formMessage) {
+                        alert(text);
+                        return;
+                    }
+                    formMessage.textContent = text;
+                    formMessage.style.display = 'block';
+                    formMessage.style.color = isError ? '#c0392b' : '#28a745';
+                };
+
+                if (!name || !email || !service) {
+                    showMessage('Please fill in required fields: Name, Email, and Service.', true);
+                    return;
+                }
+
+                try {
+                    if (submitBtn) submitBtn.disabled = true;
+                    showMessage('Sending message...');
+
+                    const res = await fetch('https://formsubmit.co/ajax/rrn2022@gmail.com', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            name,
+                            email,
+                            message,
+                            phone,
+                            service,
+                            company
+                        })
+                    });
+
+                    let data = {};
+                    try { data = await res.json(); } catch (err) { /* ignore parse errors */ }
+
+                    if (res.ok) {
+                        showMessage('Thank you — we received your message and will respond within 24 hours.');
+                        contactForm.reset();
+                        contactForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else {
+                        console.error('Form submit error:', data);
+                        showMessage(data.message || 'Could not send message. Please try again later.', true);
+                    }
+                } catch (err) {
+                    console.error('Network error:', err);
+                    showMessage('Network error while sending message.', true);
+                } finally {
+                    if (submitBtn) submitBtn.disabled = false;
+                }
+            });
+        }
+        
+        // Sticky Header on Scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

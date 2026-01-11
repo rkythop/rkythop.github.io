@@ -13,6 +13,7 @@
             --light: #f8f9fa;
             --dark: #212529;
             --success: #28a745;
+            --warning: #ffc107;
             --transition: all 0.3s ease;
         }
         
@@ -155,6 +156,14 @@
         .btn-outline:hover {
             background-color: white;
             color: var(--primary);
+        }
+        
+        .btn-secondary {
+            background-color: var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #0f2a47;
         }
         
         /* Section Styling */
@@ -406,6 +415,175 @@
             font-size: 1.1rem;
         }
         
+        /* Careers Section */
+        .careers-hero {
+            background: linear-gradient(rgba(26, 58, 95, 0.9), rgba(44, 90, 160, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .careers-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .careers-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .why-join-us {
+            background-color: var(--light);
+            padding: 80px 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .benefit-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .job-openings {
+            padding: 80px 0;
+        }
+        
+        .jobs-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background: none;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .job-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-left: 4px solid var(--accent);
+        }
+        
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .job-header {
+            padding: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .job-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .job-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .job-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .job-meta i {
+            color: var(--accent);
+        }
+        
+        .job-body {
+            padding: 25px;
+        }
+        
+        .job-body p {
+            margin-bottom: 20px;
+        }
+        
+        .job-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .job-tag {
+            background-color: var(--light);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--primary);
+        }
+        
+        .no-jobs {
+            text-align: center;
+            padding: 40px;
+            grid-column: 1 / -1;
+            color: #666;
+        }
+        
         /* Contact Section */
         .contact-section {
             background-color: var(--light);
@@ -624,6 +802,10 @@
             .contact-container {
                 flex-direction: column;
             }
+            
+            .careers-hero h1 {
+                font-size: 2.8rem;
+            }
         }
         
         @media (max-width: 768px) {
@@ -678,6 +860,18 @@
                 border-bottom: 1px solid #eee;
             }
             
+            .careers-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .careers-hero p {
+                font-size: 1rem;
+            }
+            
+            .jobs-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .form-message {
                 padding: 10px 14px;
                 font-size: 0.9rem;
@@ -725,6 +919,7 @@
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#solutions">Solutions</a></li>
                     <li><a href="#training">Training</a></li>
+                    <li><a href="#careers">Careers</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <button class="mobile-menu-btn">
@@ -741,7 +936,7 @@
             <p>Driving enterprise transformation through SAP excellence, cloud innovation, and next-gen AI. We deliver data-driven solutions with precision, reliability, and impact.</p>
             <div class="hero-buttons">
                 <a href="#solutions" class="btn">Explore Our Solutions</a>
-                <a href="#contact" class="btn btn-outline">Contact Us Today</a>
+                <a href="#careers" class="btn btn-outline">Join Our Team</a>
             </div>
         </div>
     </section>
@@ -897,6 +1092,215 @@
         </div>
     </section>
 
+    <!-- Careers Section -->
+    <section id="careers">
+        <div class="careers-hero">
+            <div class="container">
+                <h1>Build Your Career With Cloventis</h1>
+                <p>Join a team that's transforming enterprises through technology excellence. Work on cutting-edge projects, grow with industry leaders, and shape the future of digital innovation.</p>
+                <a href="#job-openings" class="btn">View Open Positions</a>
+                <a href="#contact" class="btn btn-outline">General Application</a>
+            </div>
+        </div>
+        
+        <div class="why-join-us">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Why Join Cloventis?</h2>
+                    <p>We're more than a workplace – we're a launchpad for your career</p>
+                </div>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Career Growth</h3>
+                        <p>Structured career paths, continuous learning opportunities, and mentorship from industry veterans.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>Cutting-Edge Tech</h3>
+                        <p>Work with SAP, Cloud, AI, and other emerging technologies on transformative enterprise projects.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <i class="fas fa-globe"></i>
+                        <h3>Global Impact</h3>
+                        <p>Collaborate with Fortune 500 clients and make a tangible difference across industries worldwide.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Collaborative Culture</h3>
+                        <p>Join a diverse team that values innovation, transparency, and collective success.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <i class="fas fa-award"></i>
+                        <h3>Recognition & Rewards</h3>
+                        <p>Competitive compensation, performance bonuses, and recognition for your contributions.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <i class="fas fa-balance-scale"></i>
+                        <h3>Work-Life Balance</h3>
+                        <p>Flexible working arrangements and policies that support your personal and professional life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="job-openings" id="job-openings">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Current Openings</h2>
+                    <p>Explore opportunities to join our dynamic team</p>
+                </div>
+                
+                <div class="jobs-filter">
+                    <button class="filter-btn active" data-filter="all">All Positions</button>
+                    <button class="filter-btn" data-filter="technical">Technical</button>
+                    <button class="filter-btn" data-filter="consulting">Consulting</button>
+                    <button class="filter-btn" data-filter="internship">Internship</button>
+                    <button class="filter-btn" data-filter="remote">Remote</button>
+                </div>
+                
+                <div class="jobs-grid">
+                    <div class="job-card" data-category="technical">
+                        <div class="job-header">
+                            <h3>SAP Solutions Architect</h3>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Hyderabad / Remote</span>
+                                <span><i class="fas fa-briefcase"></i> Full-time</span>
+                                <span><i class="fas fa-clock"></i> 5+ years experience</span>
+                            </div>
+                        </div>
+                        <div class="job-body">
+                            <p>Lead the design and implementation of SAP solutions for enterprise clients. Architect end-to-end solutions that transform business processes.</p>
+                            <div class="job-tags">
+                                <span class="job-tag">SAP S/4HANA</span>
+                                <span class="job-tag">Cloud Architecture</span>
+                                <span class="job-tag">Enterprise Solutions</span>
+                                <span class="job-tag">Technical Leadership</span>
+                            </div>
+                            <a href="#contact" class="btn btn-secondary">Apply Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="job-card" data-category="consulting">
+                        <div class="job-header">
+                            <h3>IT Transformation Consultant</h3>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Hyderabad</span>
+                                <span><i class="fas fa-briefcase"></i> Full-time</span>
+                                <span><i class="fas fa-clock"></i> 3+ years experience</span>
+                            </div>
+                        </div>
+                        <div class="job-body">
+                            <p>Advise enterprise clients on digital transformation strategies, technology adoption, and process optimization to drive business value.</p>
+                            <div class="job-tags">
+                                <span class="job-tag">Digital Transformation</span>
+                                <span class="job-tag">Strategy Consulting</span>
+                                <span class="job-tag">Client Engagement</span>
+                                <span class="job-tag">Business Analysis</span>
+                            </div>
+                            <a href="#contact" class="btn btn-secondary">Apply Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="job-card" data-category="technical remote">
+                        <div class="job-header">
+                            <h3>Full Stack Developer</h3>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+                                <span><i class="fas fa-briefcase"></i> Full-time</span>
+                                <span><i class="fas fa-clock"></i> 2+ years experience</span>
+                            </div>
+                        </div>
+                        <div class="job-body">
+                            <p>Develop innovative web applications and solutions using modern frameworks. Contribute to product development and client projects.</p>
+                            <div class="job-tags">
+                                <span class="job-tag">React</span>
+                                <span class="job-tag">Node.js</span>
+                                <span class="job-tag">Cloud Services</span>
+                                <span class="job-tag">API Development</span>
+                            </div>
+                            <a href="#contact" class="btn btn-secondary">Apply Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="job-card" data-category="internship">
+                        <div class="job-header">
+                            <h3>SAP Intern</h3>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Hyderabad</span>
+                                <span><i class="fas fa-briefcase"></i> Internship</span>
+                                <span><i class="fas fa-clock"></i> 0-1 years experience</span>
+                            </div>
+                        </div>
+                        <div class="job-body">
+                            <p>Hands-on training in SAP modules with real project exposure. Ideal for fresh graduates looking to build a career in enterprise solutions.</p>
+                            <div class="job-tags">
+                                <span class="job-tag">SAP Training</span>
+                                <span class="job-tag">Mentorship</span>
+                                <span class="job-tag">Project Work</span>
+                                <span class="job-tag">Career Development</span>
+                            </div>
+                            <a href="#contact" class="btn btn-secondary">Apply Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="job-card" data-category="technical">
+                        <div class="job-header">
+                            <h3>Cloud Solutions Engineer</h3>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Hyderabad</span>
+                                <span><i class="fas fa-briefcase"></i> Full-time</span>
+                                <span><i class="fas fa-clock"></i> 4+ years experience</span>
+                            </div>
+                        </div>
+                        <div class="job-body">
+                            <p>Design, implement, and manage cloud infrastructure solutions on AWS, Azure, and Google Cloud platforms for enterprise clients.</p>
+                            <div class="job-tags">
+                                <span class="job-tag">AWS</span>
+                                <span class="job-tag">Azure</span>
+                                <span class="job-tag">DevOps</span>
+                                <span class="job-tag">Infrastructure</span>
+                            </div>
+                            <a href="#contact" class="btn btn-secondary">Apply Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="job-card" data-category="consulting remote">
+                        <div class="job-header">
+                            <h3>Business Analyst</h3>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+                                <span><i class="fas fa-briefcase"></i> Contract</span>
+                                <span><i class="fas fa-clock"></i> 3+ years experience</span>
+                            </div>
+                        </div>
+                        <div class="job-body">
+                            <p>Analyze client business processes, gather requirements, and translate them into technical specifications for implementation teams.</p>
+                            <div class="job-tags">
+                                <span class="job-tag">Requirements Gathering</span>
+                                <span class="job-tag">Process Mapping</span>
+                                <span class="job-tag">Documentation</span>
+                                <span class="job-tag">Stakeholder Management</span>
+                            </div>
+                            <a href="#contact" class="btn btn-secondary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quote" style="margin-top: 50px;">
+                    <p>Don't see a position that matches your skills? Send us your resume anyway! We're always looking for talented individuals to join our team.</p>
+                    <a href="#contact" class="btn" style="margin-top: 20px;">Submit General Application</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
@@ -921,6 +1325,10 @@
                             <span>WeWork, K Raheja Mindspace, Survey No. 64,<br>
                                 Building Number 9, 13th Floor, Madhapur,<br>
                                 Hyderabad, Telangana 500081</span>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Careers: careers@cloventis.com</span>
                         </div>
                     </div>
 
@@ -964,6 +1372,7 @@
                                 <option value="IT Consulting">IT Consulting</option>
                                 <option value="Recruitment">Recruitment</option>
                                 <option value="Corporate Training">Corporate Training</option>
+                                <option value="Job Application">Job Application</option>
                                 <option value="Other">Other</option>
                             </select>
                         </div>
@@ -1006,6 +1415,7 @@
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#solutions">Solutions</a></li>
                         <li><a href="#training">Training</a></li>
+                        <li><a href="#careers">Careers</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -1025,6 +1435,7 @@
                     <h3>Contact Info</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-envelope"></i> info@cloventis.com</li>
+                        <li><i class="fas fa-briefcase"></i> careers@cloventis.com</li>
                         <li><i class="fas fa-map-marker-alt"></i> WeWork, K Raheja Mindspace, Survey No. 64, Building Number 9, 13th Floor, Madhapur, Hyderabad, Telangana 500081</li>
                     </ul>
                 </div>
@@ -1061,6 +1472,55 @@
                 // Show corresponding content
                 const tabId = btn.getAttribute('data-tab');
                 document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Job Filtering Functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const jobCards = document.querySelectorAll('.job-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all filter buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filterValue = btn.getAttribute('data-filter');
+                
+                // Show/hide job cards based on filter
+                jobCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const categories = card.getAttribute('data-category').split(' ');
+                        if (categories.includes(filterValue)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+                
+                // Check if any jobs are visible
+                const visibleJobs = Array.from(jobCards).filter(card => card.style.display !== 'none');
+                if (visibleJobs.length === 0) {
+                    // Show "no jobs" message
+                    let noJobsMsg = document.querySelector('.no-jobs');
+                    if (!noJobsMsg) {
+                        noJobsMsg = document.createElement('div');
+                        noJobsMsg.className = 'no-jobs';
+                        noJobsMsg.innerHTML = '<p>No positions available in this category at the moment. Please check back soon!</p>';
+                        document.querySelector('.jobs-grid').appendChild(noJobsMsg);
+                    }
+                } else {
+                    // Remove "no jobs" message if it exists
+                    const noJobsMsg = document.querySelector('.no-jobs');
+                    if (noJobsMsg) {
+                        noJobsMsg.remove();
+                    }
+                }
             });
         });
         
